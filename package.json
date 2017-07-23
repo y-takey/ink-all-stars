@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ex": "./node_modules/.bin/babel-node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,16 @@
     "ink-spinner": "^1.0.0",
     "ink-text-input": "^1.1.0",
     "redux": "^3.7.2"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h",
+          "useBuiltIns": true
+        }
+      ]
+    ]
   }
 }
