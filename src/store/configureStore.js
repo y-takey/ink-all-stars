@@ -1,8 +1,8 @@
 const { createStore } = require("redux");
-const counterReducer = require("../reducers/counter");
+const formReducer = require("../reducers/form");
 
 const configureStore = initialState => {
-  return createStore(counterReducer, initialState);
+  return createStore(formReducer, initialState);
 };
 
 module.exports = configureStore;

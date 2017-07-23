@@ -1,8 +1,8 @@
 const { Component } = require("ink");
 
-class Counter extends Component {
+class Form extends Component {
   render(props) {
-    return `Counter: ${props.counter}`;
+    return `Counter: ${props.step}`;
   }
 
   componentDidMount() {
@@ -14,4 +14,4 @@ class Counter extends Component {
   }
 }
 
-module.exports = Counter;
+module.exports = Form;
