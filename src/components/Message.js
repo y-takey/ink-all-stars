@@ -1,5 +1,6 @@
-const { h, Component, Text } = require("ink");
+const { h, Component } = require("ink");
 const Spinner = require("ink-spinner");
+const Flower = require("ink-flower");
 const Marquee = require("ink-marquee");
 
 class Message extends Component {
@@ -30,7 +31,7 @@ class Message extends Component {
 
     return (
       <div>
-        <Text yellow children={"COMPLETED!"} />
+        <Flower text="COMPLETED!" color="yellow" inverse />
         <br />
         <Marquee color="red" text={msg} speed={100} />
       </div>
