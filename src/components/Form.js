@@ -1,16 +1,38 @@
-const { Component } = require("ink");
+const { h, Component } = require("ink");
+const ProgressBar = require("ink-progress-bar");
+const Name = require("./Name");
+const Password = require("./Password");
+const Fruits = require("./Fruits");
+const Message = require("./Message");
+
+const STEPS = 3;
 
 class Form extends Component {
-  render(props) {
-    return `Counter: ${props.step}`;
+  inputComponent() {
+    switch (this.props.step) {
+      case 0:
+        return <Name {...this.props} />;
+      case 1:
+        return <Password {...this.props} />;
+      case 2:
+        return <Fruits {...this.props} />;
+      default:
+        return <Message {...this.props} />;
+    }
   }
 
-  componentDidMount() {
-    this.timer = setInterval(this.props.increment, 100);
-  }
+  render() {
+    const { step } = this.props;
+    const stepMsg = `completed step ${step}/${STEPS} `;
 
-  componentWillUnmount() {
-    clearInterval(this.timer);
+    return (
+      <div>
+        {stepMsg}
+        <ProgressBar percent={step / STEPS} left={stepMsg.length} green />
+        <br />
+        {this.inputComponent()}
+      </div>
+    );
   }
 }
 

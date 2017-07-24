@@ -5,7 +5,10 @@ const FormActions = require("../actions/form");
 
 const mapStateToProps = state => {
   return {
-    step: state.step
+    step: state.step,
+    name: state.name,
+    password: state.password,
+    fruits: state.fruits
   };
 };
 
