@@ -7,7 +7,7 @@ const update = (state, properties) => {
 module.exports = (state, action) => {
   switch (action.type) {
     case INPUT_NAME:
-      return update(state, { name: action.name });
+      return update(state, { name: action.name.toUpperCase() });
     case SUBMIT_NAME:
       return update(state, { step: state.step + 1 });
     case INPUT_PASSWORD:

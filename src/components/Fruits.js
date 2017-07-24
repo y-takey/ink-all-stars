@@ -6,12 +6,16 @@ class Fruits extends Component {
     const { submitFruits } = this.props;
 
     return (
-      <List onSubmit={submitFruits}>
-        <ListItem value="apple">Apple</ListItem>
-        <ListItem value="banana">Banana</ListItem>
-        <ListItem value="cherry">Cherry</ListItem>
-        <ListItem value="durian">Durian</ListItem>
-      </List>
+      <div>
+        Select your favorite fruits ( space: toggle check / enter: subimt / ↑: move to up / ↓: move to down)
+        <br />
+        <List onSubmit={submitFruits}>
+          <ListItem value="apple">Apple</ListItem>
+          <ListItem value="banana">Banana</ListItem>
+          <ListItem value="cherry">Cherry</ListItem>
+          <ListItem value="durian">Durian</ListItem>
+        </List>
+      </div>
     );
   }
 }

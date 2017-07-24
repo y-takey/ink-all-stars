@@ -30,6 +30,7 @@ class Form extends Component {
         {stepMsg}
         <ProgressBar percent={step / STEPS} left={stepMsg.length} green />
         <br />
+        <br />
         {this.inputComponent()}
       </div>
     );
